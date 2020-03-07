@@ -6,28 +6,28 @@
 
 ## 过渡布局
 ### CoordinatorLayout(ViewGroup)
-fitsSystemWindows : 为系统的状态栏预留出空间
-app:layout_scrollFlags // 子布局设置是否可滑动）
-android:layout_gravity // 属性控制组件在布局中的位置
-app:layout_behavior="@string/appbar_scrolling_view_behavior" 通知布局中包含滑动组件
+1. fitsSystemWindows : 为系统的状态栏预留出空间
+2. app:layout_scrollFlags // 子布局设置是否可滑动）
+3. android:layout_gravity // 属性控制组件在布局中的位置
+4. app:layout_behavior="@string/appbar_scrolling_view_behavior" 通知布局中包含滑动组件
 ### AppBarLayout(LinearLayout)
-fitsSystemWindows : 为系统的状态栏预留出空间
+1. fitsSystemWindows : 为系统的状态栏预留出空间
 ### CollapsingToolbarLayout(FrameLayout)
-app:collapsedTitleGravity // 指定折叠状态的标题如何放置，可选值:top、bottom等
-app:collapsedTitleTextAppearance="@style/TextAppearance.CollapsedTitle" // 指定折叠状态标题文字的样貌
-app:expandedTitleTextAppearance="@style/TextAppearance.ExpandedTitle" // 指定展开状态标题文字的样貌
-app:contentScrim="?attr/colorPrimaryDark" // 指定CollapsingToolbarLayout完全被滚出到屏幕外时的ColorDrawable
-app:expandedTitleGravity // 展开状态的标题如何放置
-app:titleEnabled // 指定是否显示标题文本
-app:toolbarId // 指定与之关联的ToolBar，如果未指定则默认使用第一个被发现的ToolBar子View
-app:expandedTitleMarginStart="10dp"
-app:expandedTitleMargin
-app:expandedTitleMarginBottom
-app:expandedTitleMarginEnd // 展开状态改变标题文字的位置，通过margin设置
-app:layout_collapseParallaxMultiplier="0.7" // 设置视差的系数，介于0.0-1.0之间。
-app:layout_collapseMode="pin"（子布局设置折叠模式） // 有两种“pin”：固定模式，在折叠的时候最后固定在顶端；“parallax”：视差模式，在折叠的时候会有个视差折叠的效果。
-fitsSystemWindows : 为系统的状态栏预留出空间
-app:layout_scrollFlags // 放到哪控件上，就代表哪个控件在操作的时候被折叠，其属性：
+1. app:collapsedTitleGravity // 指定折叠状态的标题如何放置，可选值:top、bottom等
+2. app:collapsedTitleTextAppearance="@style/TextAppearance.CollapsedTitle" // 指定折叠状态标题文字的样貌
+3. app:expandedTitleTextAppearance="@style/TextAppearance.ExpandedTitle" // 指定展开状态标题文字的样貌
+4. app:contentScrim="?attr/colorPrimaryDark" // 指定CollapsingToolbarLayout完全被滚出到屏幕外时的ColorDrawable
+5. app:expandedTitleGravity // 展开状态的标题如何放置
+6. app:titleEnabled // 指定是否显示标题文本
+7. app:toolbarId // 指定与之关联的ToolBar，如果未指定则默认使用第一个被发现的ToolBar子View
+8. app:expandedTitleMarginStart="10dp"
+9. app:expandedTitleMargin
+10. app:expandedTitleMarginBottom
+11. app:expandedTitleMarginEnd // 展开状态改变标题文字的位置，通过margin设置
+12. app:layout_collapseParallaxMultiplier="0.7" // 设置视差的系数，介于0.0-1.0之间。
+13. app:layout_collapseMode="pin"（子布局设置折叠模式） // 有两种“pin”：固定模式，在折叠的时候最后固定在顶端；“parallax”：视差模式，在折叠的时候会有个视差折叠的效果。
+14. fitsSystemWindows : 为系统的状态栏预留出空间
+15. app:layout_scrollFlags // 放到哪控件上，就代表哪个控件在操作的时候被折叠，其属性：
 > scroll : 当behavior生效时，滑动滚动视图的时候，加上这个属性才可以控制toolbar内部的视图被折叠凳效果
 > exitUntilCollapsed : 向上滚动时收缩View，但固定Toolbar一直保持不动
 > enterAlways : 无论何种场景，只要下滑动，顶部被折叠的Toolbar都将立即显示
@@ -35,29 +35,29 @@ app:layout_scrollFlags // 放到哪控件上，就代表哪个控件在操作的
 > snap : 设置吸附效果
 
 #### 一般搭配效果：
-app:layout_scrollFlags=”noScroll” // 当滚动视图滑动时，头部的TabLayout是不会跟随滑动的
-app:layout_scrollFlags=”scroll” // 当向上滑动时，Toolbar跟随滑动，下拉时拉到滚动视图的顶部头部Toolbar才会显示出来
-app:layout_scrollFlags=”scroll|enterAlways” // 当向上滑动时，Toolbar跟随滑动，只要向下拉，Toolbar就立即显示出来
-app:layout_scrollFlags=”scroll|enterAlways|enterAlwaysCollapsed” // 向上滑动时，Toolbar立即跟随隐藏；向下滑动时，首先显示Toolbar内容，当滑到顶部时，才显示Toolbar内部包含的内容
-app:layout_scrollFlags=”scroll|exitUntilCollapsed” // 当向上滑动时，Toolbar内部包含的内容会隐藏，但Toolbar固定；当向下滑动到顶部时，Toolbar内部隐藏内容才会显示出来
-app:layout_scrollFlags=”scroll|snap” // 设置吸附效果，当滚动举例不足高度一半回弹
+1. app:layout_scrollFlags=”noScroll” // 当滚动视图滑动时，头部的TabLayout是不会跟随滑动的
+2. app:layout_scrollFlags=”scroll” // 当向上滑动时，Toolbar跟随滑动，下拉时拉到滚动视图的顶部头部Toolbar才会显示出来
+3. app:layout_scrollFlags=”scroll|enterAlways” // 当向上滑动时，Toolbar跟随滑动，只要向下拉，Toolbar就立即显示出来
+4. app:layout_scrollFlags=”scroll|enterAlways|enterAlwaysCollapsed” // 向上滑动时，Toolbar立即跟随隐藏；向下滑动时，首先显示Toolbar内容，当滑到顶部时，才显示Toolbar内部包含的内容
+5. app:layout_scrollFlags=”scroll|exitUntilCollapsed” // 当向上滑动时，Toolbar内部包含的内容会隐藏，但Toolbar固定；当向下滑动到顶部时，Toolbar内部隐藏内容才会显示出来
+6. app:layout_scrollFlags=”scroll|snap” // 设置吸附效果，当滚动举例不足高度一半回弹
 
 ### Toolbar(ViewGroup)
-app:layout_scrollFlags的属性:同上
+1. app:layout_scrollFlags的属性:同上
 > 当Toolbar设置此元素时，不可以使用*exitUntilCollapsed*属性值，因为设置此元素是希望Toolbar被隐藏，但其属性值却表示Toolbar固定，相互冲突，故不可同时使用
 app:layout_collapseMode:
 > pin 
 > parallax
 > none
 ### NestedScrollView(FrameLayout)
-tools:showIn="@layout/activity_scrolling"
-layout_behavior
+1. tools:showIn="@layout/activity_scrolling"
+2. layout_behavior
 ## 菜单控件
 ### TabLayout(HorizontalScrollView)
-app:tabIndicatorColor // tab的指示符颜色
-app:tabSelectedTextColor  //　选择tab的文本颜色
-app:tabTextColor // 普通tab字体颜色
-app:tabMode // 模式，可选fixed和scrollable fixed是指固定个数，scrollable是可以横行滚动app:tabGravity // 对齐方式，可选fill和center
+1. app:tabIndicatorColor // tab的指示符颜色
+2. app:tabSelectedTextColor  //　选择tab的文本颜色
+3. app:tabTextColor // 普通tab字体颜色
+4. app:tabMode // 模式，可选fixed和scrollable fixed是指固定个数，scrollable是可以横行滚动app:tabGravity // 对齐方式，可选fill和center
 ### NavigationView(FrameLayout)
 
 ## 常规控件
@@ -66,15 +66,15 @@ app:tabMode // 模式，可选fixed和scrollable fixed是指固定个数，scr
 ### CardView
 
 ### FloatingActionButton
-layout_anchor // 依附到某控件上(@id/xxx)
-layout_anchorGravity // 依附的控件的位置
-srcCompat // 背景资源图
-app:fabSize="normal|mini" // 是用来定义大小
-app:elevation // 为空闲状态下的阴影深度
-app:pressedTranslationZ // 为按下状态
-app:backgroundTint // 是指定默认的背景颜色
-app:rippleColor // 是指定点击时的背景颜色
-app:borderWidth //　border的宽度
+1. layout_anchor // 依附到某控件上(@id/xxx)
+2. layout_anchorGravity // 依附的控件的位置
+3. srcCompat // 背景资源图
+4. app:fabSize="normal|mini" // 是用来定义大小
+5. app:elevation // 为空闲状态下的阴影深度
+6. app:pressedTranslationZ // 为按下状态
+7. app:backgroundTint // 是指定默认的背景颜色
+8. app:rippleColor // 是指定点击时的背景颜色
+9. app:borderWidth //　border的宽度
 ### TextInputLayout
 
 ### Snackbar
